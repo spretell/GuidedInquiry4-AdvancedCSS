@@ -1,0 +1,35 @@
+/* - - - created variable for wanted size mentioned in GI directions - - - */
+:root {
+  --size: 100px;   /* 100x100 squares */
+}
+
+/* - - - centering  and filling body to complete view of webpage - - - */
+body { 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* - - - for complete board - - - */
+.checkerboard {
+  width: calc(8 * var(--size));   /* multiplies 8 squares with the 100px size */
+  border: 3px solid black; /* skinny border around board */
+}
+
+/* - - - for squares IN board - - - */
+.row {
+  display: flex; /* lines up squares horizontally */
+}
+
+.square {
+  width: var(--size);
+  height: var(--size); /* sets square to created root size  (width + height) */
+  background: white; /* default color for squares set to white */
+}
+
+.row:nth-child(odd)  .square:nth-child(odd), /* odd rows: odd squares black, even squares white (default) */
+.row:nth-child(even) .square:nth-child(even) { /* even rows: odd squares white (default) , even squares black */
+  background: black;
+}
