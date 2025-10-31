@@ -1,0 +1,79 @@
+body {
+    font-family: 'Courier New';
+    text-align: center;
+    margin: 0; /* removes default margins */
+    padding: 20px; /* makes room from default page margins */
+}
+
+.featured-title { /* heading  of page */
+    font-weight: 100; /* thin lettering */
+    margin-bottom: 30px; /* space between title and products */
+    text-align: center;
+    color: lightpink;
+}
+
+.product-grid {
+    display: grid; /* css grid container */
+    grid-template-columns: repeat(4, 1fr); /* 4 equal width columns , 1 fraction of available space */
+    gap: 30px; /* space between each product (vertically + horizontally */
+    justify-items: center; /* centers horizontally in grid */
+    max-width: 1000px; /* grid won't go beyond 1000px wide */
+    margin: 0 auto; /* centers whole grid horizontally */
+}
+
+.product {
+  background: white;
+  padding: 10px;
+  border-radius: 8px; /* rounded corners */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* soft shadow */
+  width: 200px; /* each products width the same */
+}
+
+.product img {
+  width: 100%; /* image 100% fills img box */
+  transition: transform 0.2s ease; /* eases animation for more smooth effect */
+}
+
+.product img:hover {
+  transform: scale(1.03); /* enlarges img when hovered over */
+}
+
+.title {
+  color: rgb(135, 169, 122); 
+  margin: 8px 0 2px; /* 8px space between title and img , 0 horizontal space , 2px space under img */
+}
+
+.price {
+  color: lightpink;
+  font-weight: bold;
+  margin: 0; /* removes awkard spacing above and below price */
+}
+
+.description {
+  font-size: 0.9rem; /* slightly smaller than normal text (1rem) */
+  color: #6c6c6c;
+  margin-top: 10px; /* space above desc */
+}
+
+/* phone media */
+@media screen and (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* 1 item per row */
+    }
+}
+
+/* tablet media */
+@media screen and (max-width: 800px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+  }
+}
+
+/* desktop media */
+@media screen and (min-width: 1200px) {
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr); /* 5 items per row */
+        gap: 40px;
+        max-width: 1300px; /* prevents ugly stretch */
+    }
+}
