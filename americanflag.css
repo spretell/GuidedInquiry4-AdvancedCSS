@@ -1,0 +1,48 @@
+
+/* - - - complete centering in page - - - */
+body { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* - - - flag container - - - */
+.flag {
+    width: 600px;
+    height: 390px; /* sizing */
+    position: relative; /* positions children accordingly */
+}
+
+/* - - - stripes - - - */
+.stripes {
+    display: flex; /* turns into flexbox */
+    flex-direction: column; /* stacks vertically */
+    height: 100%; /* fills to parent (390px) */
+}
+
+.red, .white {
+    height: calc(100%/13); /* becomes 1/13th of flag height */
+    width: 100%; /* width fills full flag container */
+}
+
+.red {
+    background-color: rgb(173, 16, 16); /* darkish red */
+}
+
+.white {
+    background-color: white;
+}
+
+/* - - - stars - - - */
+.stars {
+    position: absolute; /* stars image rests on TOP of stripes */
+    top: 0;
+    left: 0; /* places on top left corner */
+    width: auto; /* keeps width of original image */
+    height: 210px; /* fills height of 7 stripes */
+    object-fit: contain; /* fits full image */
+    display: block; /* removes awkward spacing */
+}
